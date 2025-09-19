@@ -8,7 +8,7 @@
 		"custom/sleep",
 		"custom/lock",
 		"custom/logout",
-		"hyprland/workspaces"
+		"sway/workspaces"
 	],
 	"modules-center": [
 		"custom/clock",
@@ -91,12 +91,12 @@
 		"on-click": "hyprctl dispatch exit",
 		"tooltip": "Logout"
 	},	
-	"hyprland/workspaces": {
+	"sway/workspaces": {
   		"format": "{icon}",
 	  	"on-click": "activate",
 	  	"format-icons": {
-    			"active": " ",
-    			"default": " "
+    			"focused": " ",
+    			"default": " "
   		},
 		"persistent-workspaces": {
 			"1": [], 
