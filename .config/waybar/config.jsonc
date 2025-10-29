@@ -8,6 +8,8 @@
 		"custom/sleep",
 		"custom/lock",
 		"custom/logout",
+		"custom/nightlight",
+		"custom/daylight",
 		"sway/workspaces"
 	],
 	"modules-center": [
@@ -73,7 +75,7 @@
 	},
 	"custom/lock": {
 		"exec": "echo ",
-		"on-click": "hyprlock",
+		"on-click": "~/.config/waybar/scripts/custom-lock.sh",
 		"tooltip": "Lock the screen"
 	},
 	"custom/shutdown": {
@@ -83,20 +85,30 @@
 	},
 	"custom/sleep": {
 		"exec": "echo ",
-		"on-click": "hyprlock & systemctl sleep",
+		"on-click": "~/.config/waybar/scripts/custom-lock.sh & systemctl sleep",
 		"tooltip": "Sleep"
 	},
 	"custom/logout": {
 		"exec": "echo 󰀄",
-		"on-click": "hyprctl dispatch exit",
+		"on-click": "swaymsg exit & reset",
 		"tooltip": "Logout"
 	},	
+	"custom/nightlight": {
+		"exec": "echo 󱩌 ",
+		"on-click": "busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3500",
+		"tooltip": "Blue light fliter on"
+	},
+	"custom/daylight": {
+		"exec": "echo  ",
+		"on-click": "busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500",
+		"tooltip": "Blue light fliter off"
+	},
 	"sway/workspaces": {
   		"format": "{icon}",
 	  	"on-click": "activate",
 	  	"format-icons": {
-    			"focused": " ",
-    			"default": " "
+    			"focused": " ",
+    			"default": " "
   		},
 		"persistent-workspaces": {
 			"1": [], 

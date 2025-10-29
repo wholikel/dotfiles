@@ -31,11 +31,11 @@ workspace 8 output eDP-1
 workspace 9 output eDP-1
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/michal/Pictures/nord-mountains.png fill
+output * bg '~/pictures/wallpapers/ciscodebil.jpg' fill 
 #
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+output DP-3 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -63,9 +63,9 @@ output * bg /home/michal/Pictures/nord-mountains.png fill
 #       middle_emulation enabled
 #   }
 #
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
+input type:keyboard {
+	xkb_layout "pl"
+}
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
@@ -218,8 +218,6 @@ bindsym $mod+p mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
 
 #
 # Status Bar:
@@ -237,5 +235,10 @@ client.unfocused #2e3440 #2e3440 #2e3440 #2e3440 #2e3440
 client.focused_inactive #2e3440 #2e3440 #2e3440 #2e3440 #2e3440 
 client.urgent #2e3440 #2e3440 #2e3440 #2e3440 #2e3440 
 
+exec wl-gammarelay
+exec protonvpn-app 
+
+# screenshots
+bindsym Print exec sh -c 'XDG_SCREENSHOTS_DIR=/home/michal/pictures/screenshots shotman -c region' 
 
 include /etc/sway/config.d/*
