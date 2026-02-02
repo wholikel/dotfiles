@@ -31,7 +31,7 @@ workspace 8 output eDP-1
 workspace 9 output eDP-1
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg '~/pictures/wallpapers/ciscodebil.jpg' fill 
+output * bg '~/pictures/wallpapers/nord-wallpaper.jpg' fill 
 #
 # Example configuration:
 #
